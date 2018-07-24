@@ -1,0 +1,20 @@
+@import './../../styles/variables';
+.button {
+  display: inline-flex;
+  min-width: 150px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  padding: 5px 20px;
+  font-family: TheSun;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: $color-0-0;
+  box-shadow: 0 6px 9px 0 rgba(114, 26, 135, 0.36);
+}

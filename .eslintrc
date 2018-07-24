@@ -1,0 +1,41 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["react", "prettier"],
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "no-mixed-operators": "off",
+    "arrow-parens": ["error", "always"],
+    "global-require": "warn",
+    "object-curly-newline": ["error", {
+      "consistent": true
+    }],
+    "function-paren-newline": ["error", "consistent"],
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".js", ".jsx"]
+    }],
+    "react/sort-comp": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/click-events-have-key-events": "never",
+    "jsx-a11y/no-static-element-interactions": "never",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "generator-star-spacing": "off",
+    "linebreak-style": 0,
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        "devDependencies": [
+          "redux-devtools",
+          "redux-devtools-log-monitor",
+          "redux-devtools-dock-monitor"
+        ]
+      }
+    ]
+  }
+}

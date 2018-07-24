@@ -1,0 +1,17 @@
+@import './fonts';
+@import './variables';
+:global * {
+  box-sizing: border-box;
+}
+
+:global .container {
+  position: relative;
+  max-width: $container-max-width;
+  padding: 0 $container-padding-horizontal;
+  margin: 0 auto;
+}
+
+:global #modal {
+  position: fixed;
+  z-index: 100;
+}
