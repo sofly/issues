@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  padding: 8px 16px;
+  border-top: 1px solid rgb(225, 228, 232);
+}
+
+.wrapper-icon {
+  margin-right: 8px;
+  color: rgb(40, 167, 69);
+
+  &.closed {
+    color: rgb(167, 40, 40);
+  }
+}
+
+.icon {
+  fill: currentColor;
+  vertical-align: text-top;
+}
+
+.title {
+  line-height: 1.25;
+  flex-grow: 1;
+  text-decoration: none;
+  color: rgb(36, 41, 46);
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    color: rgb(3, 102, 214);
+  }
+}

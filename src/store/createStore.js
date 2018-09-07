@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 
-import objReducers from './modules/rootReducer';
+import rootReducer from './modules/rootReducer';
 
 const getEnhancers = (history) => {
   const middleware = [routerMiddleware(history)];
@@ -21,7 +21,6 @@ const getEnhancers = (history) => {
 };
 
 export default (history) => {
-  const rootReducer = combineReducers(objReducers);
   const store = createStore(rootReducer, getEnhancers(history));
 
   return store;

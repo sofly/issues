@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 
@@ -14,12 +14,15 @@ import createHistory from './history/createHistory';
 const history = createHistory();
 const store = createStore(history);
 
-const renderRoot = () => (
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
-  </Provider>
-);
+const render = (Component) => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Component />
+      </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root'),
+  );
+};
 
-render(renderRoot(), document.getElementById('root')); // eslint-disable-line
+render(App);

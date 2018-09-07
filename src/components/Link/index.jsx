@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import styles from './styles.scss';
 
-function getSuitableElementAndProps({ to, href, type, onClick }) {
+function getSuitableElementAndProps({ to, href, onClick }) {
   let Element = 'button';
   const props = { onClick };
 
@@ -15,15 +15,13 @@ function getSuitableElementAndProps({ to, href, type, onClick }) {
   } else if (href) {
     Element = 'a';
     props.href = href;
-  } else {
-    props.type = type;
   }
 
   return { Element, props };
 }
 
-export default function Button({ children, className, primary, ...anotherProps }) {
-  const classNames = classnames(styles.button, className, { [styles.primary]: primary });
+export default function CustomLink({ children, className, bold, ...anotherProps }) {
+  const classNames = classnames(styles.link, className, { [styles.bold]: bold });
 
   const { Element, props } = getSuitableElementAndProps(anotherProps);
 
@@ -34,21 +32,19 @@ export default function Button({ children, className, primary, ...anotherProps }
   );
 }
 
-Button.propTypes = {
+Link.propTypes = {
   to: PropTypes.string,
-  type: PropTypes.string,
   href: PropTypes.string,
+  bold: PropTypes.bool,
   onClick: PropTypes.func,
-  primary: PropTypes.bool,
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
-Button.defaultProps = {
+Link.defaultProps = {
   to: '',
   href: '',
-  type: 'button',
-  primary: false,
+  bold: false,
   onClick: () => {},
   className: '',
 };

@@ -1,29 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import { push } from 'react-router-redux';
+import { connect } from 'react-redux';
 
 import Button from './../../components/Button';
 
 import styles from './styles.scss';
 
-class Home extends Component {
-  static propTypes = {
-    goToGame: PropTypes.func.isRequired,
-  };
+function Home({ goToLink }) {
+  return (
+    <section className={styles.home}>
+      <p className={styles.title}>Home Page :)</p>
 
-  componentDidUpdate() {}
-
-  render() {
-    const { goToGame } = this.props;
-
-    return (
-      <section className={classnames(styles.home, 'page')}>
-        <p>Home Page :)</p>
-
-        <Button onClick={goToGame}>Go to Game</Button>
-      </section>
-    );
-  }
+      <Button onClick={goToLink}>Go to repository React</Button>
+    </section>
+  );
 }
 
-export default Home;
+Home.propTypes = {
+  goToLink: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  goToLink: () => dispatch(push('/facebook/react/')),
+});
+
+export default connect(null, mapDispatchToProps)(Home);

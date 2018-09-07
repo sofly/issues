@@ -1,8 +1,9 @@
+import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import loader from './Loader/reducer';
+import issues from './Issues/reducer';
 
-export default {
-  loader,
+export default combineReducers({
   router: routerReducer,
-};
+  issues,
+});

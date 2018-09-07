@@ -1,9 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const pkg = require('./../package.json');
 
 const PATH_SRC = path.join(__dirname, '../src');
 const PATH_DIST = path.join(__dirname, '../dist');
@@ -42,7 +39,7 @@ exports.CONFIG = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        include: [PATH_SRC ],
+        include: [PATH_SRC],
         exclude: /node_modules/,
       },
       {
@@ -92,9 +89,6 @@ exports.CONFIG = {
   },
   plugins: [
     extractSass,
-    new webpack.DefinePlugin({
-      GLOBAL_VERSION_PROJECT: JSON.stringify(IS_DEV ? 'latest' : pkg.version),
-    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, PATH_SRC, 'index.html'),
       minify: {

@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  padding: 0 16px;
+  background: #fafbfc;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  font-size: inherit;
+
+  .icon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+    margin-right: 5px;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+
+  &+& {
+    margin-left: 10px;
+  }
+}

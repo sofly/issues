@@ -1,20 +1,31 @@
-@import './../../styles/variables';
 .button {
-  display: inline-flex;
-  min-width: 150px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 35px;
-  padding: 5px 20px;
-  font-family: TheSun;
+  position: relative;
+  display: inline-block;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  text-align: center;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
   cursor: pointer;
-  border: none;
-  color: white;
-  background-color: $color-0-0;
-  box-shadow: 0 6px 9px 0 rgba(114, 26, 135, 0.36);
+  user-select: none;
+  background-size: 110% 110%;
+  -webkit-appearance: none;
+  padding: 6px 12px;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(27, 31, 35, 0.2);
+  border-image: initial;
+  border-radius: 0.25em;
+  color: rgb(36, 41, 46);
+  background-color: rgb(239, 243, 246);
+  background-image: linear-gradient(-180deg, rgb(250, 251, 252) 0%, rgb(239, 243, 246) 90%);
+}
+
+.primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(40, 167, 69);
+  background-image: linear-gradient(-180deg, rgb(52, 208, 88) 0%, rgb(40, 167, 69) 90%);
 }
